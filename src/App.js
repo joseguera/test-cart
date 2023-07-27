@@ -18,16 +18,22 @@ function App() {
   }
 
   function addToCart(item, qty) {
-    setCartItems((prevItems) => ({
+    let prevQty;
+    setCartItems((prevItems) => (
+      prevQty = (prevItems[item.id] === undefined) ? 0 : prevItems[item.id].quantity,
+      {
       ...prevItems,
-      [item.id]: item,
+      [item.id]: {
+        ...item,
+        quantity: qty + prevQty
+      }
     }));
   }
 
   return (
     <>
-      {/* {console.log(cartItems)} */}
-      {console.log(shoppingItems)}
+      {console.log(cartItems)}
+      {/* {console.log(shoppingItems)} */}
       <Cart total={Object.keys(cartItems).length} />
       <div
         className="App"

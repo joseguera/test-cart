@@ -21,7 +21,6 @@ export default function Item({ item, addToCart, updateItemQty }) {
         border: "1px solid black",
       }}
     >
-      {console.log("Item", qty)}
       <h2>{item.title}</h2>
       <ImageCarousel item={item} />
       <p>
