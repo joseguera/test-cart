@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Cart from "./components/Cart";
-import Item from "./components/Item";
-import { products } from "./products";
-import "./App.css";
+import { Link } from "react-router-dom";
+import Cart from "../components/Cart";
+import Item from "../components/Item";
+import { products } from "../products";
 
-function App() {
+export default function Home() {
   const [shoppingItems, setShoppingItems] = useState(products);
   const [cartItems, setCartItems] = useState({});
 
@@ -36,8 +36,6 @@ function App() {
 
   return (
     <>
-      {console.log(cartItems)}
-      {/* {console.log(shoppingItems)} */}
       <Cart total={Object.keys(cartItems).length} />
       <div
         className="App"
@@ -65,5 +63,3 @@ function App() {
     </>
   );
 }
-
-export default App;

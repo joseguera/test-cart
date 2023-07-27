@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ImageCarousel from "./ImageCarousel";
 import Quantity from "./Quantity";
 
@@ -21,7 +22,9 @@ export default function Item({ item, addToCart, updateItemQty }) {
         border: "1px solid black",
       }}
     >
-      <h2>{item.title}</h2>
+      <Link to={`/product/${item.title}`}>
+        <h2>{item.title}</h2>
+      </Link>
       <ImageCarousel item={item} />
       <p>
         <span>Price: </span>
