@@ -5,7 +5,7 @@ export const products = [
     title: "iPhone 9",
     price: 549,
     quantity: 0,
-    stock: 94,
+    stock: 10,
     thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
     images: [
         "https://i.dummyjson.com/data/products/1/1.jpg",
@@ -23,7 +23,7 @@ export const products = [
     title: "iPhone X",
     price: 899,
     quantity: 0,
-    stock: 34,
+    stock: 10,
     thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
     images: [
         "https://i.dummyjson.com/data/products/2/1.jpg",
@@ -40,7 +40,7 @@ export const products = [
     title: "Samsung Universe 9",
     price: 1249,
     quantity: 0,
-    stock: 36,
+    stock: 10,
     thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
     images: ["https://i.dummyjson.com/data/products/3/1.jpg"],
     description:
@@ -53,7 +53,7 @@ export const products = [
     title: "OPPOF19",
     price: 280,
     quantity: 0,
-    stock: 123,
+    stock: 10,
     thumbnail: "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
     images: [
         "https://i.dummyjson.com/data/products/4/1.jpg",
@@ -70,7 +70,7 @@ export const products = [
     title: "Huawei P30",
     price: 499,
     quantity: 0,
-    stock: 32,
+    stock: 10,
     thumbnail: "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
     images: [
       "https://i.dummyjson.com/data/products/5/1.jpg",

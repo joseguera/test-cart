@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Cart from "./components/Cart";
 import Item from "./components/Item";
 import { products } from "./products";
@@ -7,18 +7,11 @@ import "./App.css";
 function App() {
   const [shoppingItems, setShoppingItems] = useState(products);
   const [cartItems, setCartItems] = useState({});
-  const [itemQty, setItemQty] = useState(1);
 
-  function updateItemQty(currQty) {
-    setItemQty((prevQty) => {
-      return prevQty + currQty;
-    });
-  }
-
-  function addToCart(item) {
+  function addToCart(item, qty) {
     setCartItems((prevItems) => ({
       ...prevItems,
-      [item.id]: { ...item, quantity: itemQty },
+      [item.id]: { ...item, quantity: qty },
     }));
   }
 
@@ -41,9 +34,9 @@ function App() {
         {shoppingItems.map((item) => {
           return (
             <Item
+              key={item.id}
               item={item}
               addToCart={addToCart}
-              updateItemQty={updateItemQty}
             />
           );
         })}
