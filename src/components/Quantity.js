@@ -30,6 +30,7 @@ export default function Quantity({ item, qty, getQty }) {
       <button
         disabled={qty === item.stock ? true : false}
         onClick={() => increaseQty()}
+
       >
         &#43;
       </button>
