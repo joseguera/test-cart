@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Quantity({ item, qty, getQty }) {
 
@@ -12,9 +12,6 @@ export default function Quantity({ item, qty, getQty }) {
 
   return (
     <div style={{ display: "flex", gap: "5px", justifyContent: "center" }}>
-     
-      {console.log("Quantity", qty)}
-
       <button
         disabled={qty < 1 ? true : false}
         onClick={() => decreaseQty()}
