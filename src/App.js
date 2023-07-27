@@ -8,16 +8,26 @@ function App() {
   const [shoppingItems, setShoppingItems] = useState(products);
   const [cartItems, setCartItems] = useState({});
 
+  function updateItemQty(item, qty) {
+    const newQty = shoppingItems.filter(product => product.id === item.id);
+    const rest = shoppingItems.filter(product => product.id !== item.id);
+    newQty[0].quantity = qty;
+    const newList = [...rest, newQty[0]];
+    newList.sort((a, b) => a.id - b.id)
+    setShoppingItems(newList);
+  }
+
   function addToCart(item, qty) {
     setCartItems((prevItems) => ({
       ...prevItems,
-      [item.id]: { ...item, quantity: qty },
+      [item.id]: item,
     }));
   }
 
   return (
     <>
-      {console.log(cartItems)}
+      {/* {console.log(cartItems)} */}
+      {console.log(shoppingItems)}
       <Cart total={Object.keys(cartItems).length} />
       <div
         className="App"
@@ -37,6 +47,7 @@ function App() {
               key={item.id}
               item={item}
               addToCart={addToCart}
+              updateItemQty={updateItemQty}
             />
           );
         })}

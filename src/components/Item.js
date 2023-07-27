@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ImageCarousel from "./ImageCarousel";
 import Quantity from "./Quantity";
 
-export default function Item({ item, addToCart }) {
+export default function Item({ item, addToCart, updateItemQty }) {
   const [qty, setQty] = useState(0)
 
   const getQty = (newQty) => {
@@ -31,7 +31,7 @@ export default function Item({ item, addToCart }) {
       <Quantity item={item} qty={qty} getQty={getQty} />
       <p>{item.description}</p>
       <button
-        onClick={() => addToCart(item, qty)}
+        onClick={() => {addToCart(item, qty); updateItemQty(item, qty)}}
       >
         Add to Cart
       </button>
