@@ -1,9 +1,13 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import ImageCarousel from "./ImageCarousel";
 import Quantity from "./Quantity";
 
-export default function Item({ item, addToCart, updateItemQty }) {
-  const currQty = useRef();
+export default function Item({ item, addToCart }) {
+  const [qty, setQty] = useState(0)
+
+  const getQty = (newQty) => {
+    setQty(newQty)
+  }
 
   return (
     <div
@@ -17,19 +21,17 @@ export default function Item({ item, addToCart, updateItemQty }) {
         border: "1px solid black",
       }}
     >
+      {console.log("Item", qty)}
       <h2>{item.title}</h2>
       <ImageCarousel item={item} />
       <p>
         <span>Price: </span>
         {item.price}
       </p>
-      <Quantity item={item} currQty={currQty} />
+      <Quantity item={item} qty={qty} getQty={getQty} />
       <p>{item.description}</p>
       <button
-        onClick={() => {
-          updateItemQty(Number(currQty.current.value));
-          addToCart(item);
-        }}
+        onClick={() => addToCart(item, qty)}
       >
         Add to Cart
       </button>
